@@ -3,11 +3,9 @@ body {
 }
 
 .container {
-max-width: 600px;
-margin: 30px auto;
-padding: 20px;
-border: 1px solid #dadde1;
-border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+
 }
 h1 {
     color: #878787;
@@ -46,4 +44,12 @@ li {
     position: relative;
     font-size: 16px;
     top: -32px;
+}
+
+.weather-app-wrapper {
+    padding: 20px;
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+
+    
 }
