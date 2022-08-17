@@ -13,6 +13,7 @@ h1 {
     font-weight: 100;
     line-height: 28px;
     margin-bottom: 0%;
+    text-align: center;
 }
 
 ul {
@@ -45,11 +46,11 @@ li {
     font-size: 16px;
     top: -32px;
 }
-
 .weather-app-wrapper {
     padding: 20px;
     border: 1px solid #dadde1;
     border-radius: 10px;
-
-    
+}
+.center {
+    text-align: center;
 }
