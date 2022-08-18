@@ -13,6 +13,20 @@
     <div class="container">
         <div class="weather-app-wrapper">
             <div class="weather-app">
+                <form id="search-form" class="mb-5">
+                    <div class="row">
+                        <div class="col-9">
+                    <input type="search" 
+                    placeholder="Type the City.." 
+                    class="form-control" 
+                    id="city-input" 
+                    autocomplete="off"/>
+                        </div>
+                        <div class="col-3">
+                    <input type="submit" value="search" class="btn btn-primary w-100"/>
+                        </div>
+                    </div>
+                </form>
                 <div class="owerwiew">
                    <h1 id="city"></h1>
                      <ul class="center">
@@ -26,14 +40,14 @@
     <div class="row">
      <div class="col-md-6">
         <div class="float-left">
-          <strong id="temperature">25</strong>
+          <strong id="temperature"></strong>
           <span class="units"><a href="#" >°C</a>| <a href="#" >F</a></span>
         </div>
      </div>
     
      <div class="col-md-6">
         <div class="clearfix weather-temperature">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" class="float-right" />
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" class="float-right" id="icon"/>
         </div>
      </div>
     </div>

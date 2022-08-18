@@ -22,6 +22,7 @@ function displayTemperature(response) {
     let speedElement = document.querySelector("#speed");
     let pressureElement = document.querySelector("#pressure");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
     let description = document.querySelector("#description");
     
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -31,10 +32,24 @@ function displayTemperature(response) {
     pressureElement.innerHTML = Math.round(response.data.main.pressure);
     description.innerHTML = response.data.weather[0].description;
     dateElement.innerHTML = formatDate(response.data.dt*1000);
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+}
+function search(city) {
+    let apiKey = "f2f4d2c4dde5316e6c1c815630c6aee0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
 }
 
-let apiKey = "f2f4d2c4dde5316e6c1c815630c6aee0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+    console.log(cityInputElement.value);
+}
+
+search("New York");
 
 
-axios.get(apiUrl).then(displayTemperature);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
