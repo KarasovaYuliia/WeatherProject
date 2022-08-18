@@ -1,3 +1,18 @@
+function formatDate(timestamp) {
+    let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
+    let days = ["Sunday", "Monday", "Tuesaday", "Wednsday", "Thirsday", "Saturday", "Sunday"];
+    let day = days[date.getDay()];
+    return `${day} ${hours}:${minutes}`;
+}
+
 function displayTemperature(response) {
     console.log(response.data);
     console.log(response.data.main.temp);
@@ -5,13 +20,17 @@ function displayTemperature(response) {
     let cityElement = document.querySelector("#city");
     let humidityElement = document.querySelector("#humidity");
     let speedElement = document.querySelector("#speed");
+    let pressureElement = document.querySelector("#pressure");
+    let dateElement = document.querySelector("#date");
     let description = document.querySelector("#description");
     
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     humidityElement.innerHTML = response.data.main.humidity;
     speedElement.innerHTML = Math.round(response.data.wind.speed);
+    pressureElement.innerHTML = Math.round(response.data.main.pressure);
     description.innerHTML = response.data.weather[0].description;
+    dateElement.innerHTML = formatDate(response.data.dt*1000);
 }
 
 let apiKey = "f2f4d2c4dde5316e6c1c815630c6aee0";
