@@ -63,3 +63,10 @@ li:first-letter {
 .center {
     text-align: center;
 }
+.float-left .active {
+    color: rgb(135, 135, 135);
+    cursor: default;
+}
+.float-left .active:hover {
+    text-decoration: none;
+}
