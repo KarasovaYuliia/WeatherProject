@@ -70,3 +70,7 @@ li:first-letter {
 .float-left .active:hover {
     text-decoration: none;
 }
+
+.float-left {
+    margin-top: 20px;
+}
