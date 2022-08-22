@@ -74,3 +74,16 @@ li:first-letter {
 .float-left {
     margin-top: 20px;
 }
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+    
+}
+.weather-forecast-date,
+.weather-forecast-temperature-min {
+    font-size: 16px;
+    opacity: 0.5;
+}
+.weather-forecast-temperatures {
+    font-size: 13pt;
+}
